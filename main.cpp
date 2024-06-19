@@ -47,10 +47,7 @@ void writinglines(int counterOctedOne,int counterOctedTwo,int counterOctedThree,
       OctetFour[i - (counterOctedOne+counterOctedTwo+counterOctedThree+3)] = ipAddress[i];
     }
   }
-  std::cout<<OctetOne<<"\n";
-  std::cout<<OctetTwo<<"\n";
-  std::cout<<OctetThree<<"\n";
-  std::cout<<OctetFour<<"\n";
+
 }
 int one, two, three, four; bool nummberOTTF = false;
 void Numbers(std::string OctetOne,std::string OctetTwo,std::string OctetThree,std::string OctetFour){
@@ -73,7 +70,7 @@ void Numbers(std::string OctetOne,std::string OctetTwo,std::string OctetThree,st
     if(ipAddress[0] == '.' || ipAddress[ipAddress.length()-1] == '.'){
         pCheck = false;
       }
-    if(ipAddress[0]<48 || ipAddress[0]>57 || ipAddress[ipAddress.length()-1]<48 || ipAddress[ipAddress.length()-1]>57){
+    if(ipAddress[i]<48  && ipAddress[i] !=46 || ipAddress[i]>57){
         pCheck = false;
       }
     if (ipAddress[0]==' '){
@@ -93,10 +90,8 @@ int main() {
     std::cout<<"Invalid\n";
   } else{ 
   numberСharacters(ipAddress);
-  std::cout<<counterOctedOne<<" "<<counterOctedTwo<<" "<<counterOctedThree<< " "<<counterOctedFour<<"\n";
   writinglines(counterOctedOne, counterOctedTwo,counterOctedThree, counterOctedFour);
   Numbers(OctetOne,OctetTwo,OctetThree,OctetFour);
-  std::cout<<one <<" "<<two<<" "<<three<<" "<<four<<nummberOTTF<<"\n";
     if(nummberOTTF == false){
       std::cout<<"Invalid\n";
     } else {std::cout<<"Valid\n";}
